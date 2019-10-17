@@ -1,4 +1,5 @@
 ﻿https://www.jb51.net/article/134434.htm		.Net Core部署到CentOS的图文教程
+https://ken.io/serie/centos7-quickstart		CentOS 7 快速上手教程
 
 1、Startup Constructor（构造函数）
 	Startup Class中含有两个重要方法：Configure方法用于每次http请求的处理，比如后面要讲的中间件(Middleware)，就是在configure方法中配置;
