@@ -1,0 +1,14 @@
+﻿https://www.jb51.net/article/134434.htm		.Net Core部署到CentOS的图文教程
+
+1、Startup Constructor（构造函数）
+	Startup Class中含有两个重要方法：Configure方法用于每次http请求的处理，比如后面要讲的中间件(Middleware)，就是在configure方法中配置;
+	而ConfigureServices方法在Configure方法前调用，它是一个可选的方法，可在configureServices依赖注入接口或一些全局的框架，比如EntityFramework、MVC等。
+	Startup 类的 执行顺序：构造 -> configureServices->configure。
+
+2、ConfigureServices
+	IServiceCollection：整个ASP.NET Core 默认带有依赖注入(DI)，IServiceCollection是依赖注入的容器，首先创建一个类(Foo)和接口(IFoo)
+
+3、Configure方法：（主要是http处理管道配置和一些系统配置，参数如下：）
+	IApplicationBuilder: 用于构建应用请求管道;通过IApplicationBuilder下的run方法传入管道处理方法;这是最常用方法,对于一个真实环境的应用基本上都需要比如权限验证、跨域、异常处理等。
+	ILoggerFactory: 提供创建日志的接口，可以选用已经实现接口的类或自行实现此接口,下面代码使用最简单的控制台作为日志输出。
+	IHostingEnvironment: 用于访问应用程序的特殊属性，比如applicationName,applicationVersion。
