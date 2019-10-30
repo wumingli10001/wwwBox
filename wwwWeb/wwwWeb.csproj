@@ -9,10 +9,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.6" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <ProjectReference Include="..\wwwIRepositories\wwwIRepositories.csproj" />
+    <ProjectReference Include="..\wwwRepositories\wwwRepositories.csproj" />
     <ProjectReference Include="..\wwwTools\wwwTools.csproj" />
   </ItemGroup>
 
