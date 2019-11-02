@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using wwwTools.依赖注入_Test;
+using wwwRepositories;
 
 namespace wwwWeb
 {
@@ -39,6 +39,7 @@ namespace wwwWeb
             services.Configure<IISOptions>(options => { options.ForwardClientCertificate = false; });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<DataContext>();
         }
 
         /// <param name="app">IApplicationBuilder:  用于构建应用请求管道。通过IApplicationBuilder下的run方法传入管道处理方法。
@@ -75,11 +76,6 @@ namespace wwwWeb
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.Run((context) =>
-            {
-                var str = context.RequestServices.GetRequiredService<IWwwDemo_DI>().GetWww();
-                return context.Response.WriteAsync(str);
-            });
 
 
         }

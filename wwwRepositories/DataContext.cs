@@ -19,7 +19,7 @@ namespace wwwRepositories
             optionsBuilder.UseMySql(_configuration.GetConnectionString("wwwWebDb"));
         }
 
-        public DbSet<WwwDescribe> Describes { get; set; }
+        public DbSet<Describe> Describes { get; set; }
 
     }
 }

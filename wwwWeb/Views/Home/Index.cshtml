@@ -53,6 +53,14 @@
   </ol>
 </div>
 
+<div id="app">
+    <app-nav></app-nav>
+    <app-view>
+        <app-sidebar></app-sidebar>
+        <add-content></add-content>
+    </app-view>
+</div>
+
 <script>
     var app = new Vue({
         el:"#app",
@@ -112,9 +120,10 @@
         props:['todo'],
         template:"<li>{{todo.text}}</li>"
     })
+
     var app7 = new Vue({
         el: '#app-7',
-        data: {
+        data: {            
         groceryList: [
             { id: 0, text: '蔬菜' },
             { id: 1, text: '奶酪' },

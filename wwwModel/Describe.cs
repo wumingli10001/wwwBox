@@ -6,7 +6,7 @@ using System.Text;
 
 namespace wwwModel
 {
-    public class WwwDescribe : BaseModel
+    public class Describe : BaseModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
