@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace wwwWeb
+namespace wwwApi_W
 {
     public class Program
     {
@@ -19,7 +19,6 @@ namespace wwwWeb
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-            .UseUrls("http://*:10001");
+                .UseStartup<Startup>();
     }
 }

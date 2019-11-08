@@ -40,6 +40,7 @@ namespace wwwWeb
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddTransient<DataContext>();
+            services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
         }
 
         /// <param name="app">IApplicationBuilder:  用于构建应用请求管道。通过IApplicationBuilder下的run方法传入管道处理方法。
@@ -53,10 +54,6 @@ namespace wwwWeb
             {
                 app.UseDeveloperExceptionPage();
             }
-            else if(env.IsProduction())
-            {
-
-            }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -64,7 +61,7 @@ namespace wwwWeb
                 app.UseHsts();
             }
             app.UseDefaultFiles();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
